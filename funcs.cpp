@@ -20,14 +20,14 @@ string removeLeadingSpaces(string line){
 }
 
 int countChar(string line, char c){
-  int result = 0;
+  int resul = 0;
   for (int i = 0; i < line.size(); i++){
     char pre = (char) line[i];
     if (curr == c){
-      result += 1;
+      resul += 1;
     }
   }
-  return result;
+  return resul;
 }
 
 string unindent(string line){
@@ -43,7 +43,7 @@ string indent(){
     line = unindent(line);
     count -= countChar(line, '}');
     for (int i = 0; i < count; i++){
-      result += '\t';
+      result += '\t'; //new line
     }
     result += line + "\n";
     count += countChar(line, '{');
